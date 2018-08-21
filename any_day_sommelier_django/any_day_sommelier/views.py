@@ -21,3 +21,5 @@ class FoodList(generics.ListCreateAPIView):
 class FoodDetail(generics.RetrieveUpdateDestroyAPIView):
   queryset = Food.objects.all()
   serializer_class = FoodSerializer
+
+

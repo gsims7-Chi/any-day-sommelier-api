@@ -13,7 +13,7 @@ class Food(models.Model):
   example_2 = models.CharField(max_length=100)
 
   def __str__(self):
-    return self.entree
+    return self.type
 
 class User(models.Model):
   username = models.CharField(max_length=100)
@@ -27,7 +27,7 @@ class Pairing(models.Model):
   food = models.ForeignKey(Food, on_delete=models.CASCADE, related_name='pairings')
 
   def __str__(self):
-    return self.wine
+    return "{} goes with {}".format(self.food, self.wine)
 
 class Favorite(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='favorites')
