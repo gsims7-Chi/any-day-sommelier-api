@@ -3,9 +3,10 @@ from django.db import models
 # Create your models here.
 class Wine(models.Model):
   type = models.CharField(max_length=100)
+  
 
   def __str__(self):
-    return self.food.all()
+    return self.type
 
 class Food(models.Model):
   type = models.CharField(max_length=100)
@@ -14,7 +15,7 @@ class Food(models.Model):
   wines = models.ManyToManyField(Wine, through='Pairing')
 
   def __str__(self):
-    return self.wine_set.all()
+    return self.type
 
 class User(models.Model):
   username = models.CharField(max_length=100)

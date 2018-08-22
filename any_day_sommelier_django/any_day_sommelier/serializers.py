@@ -9,7 +9,7 @@ class WineSerializer(serializers.HyperlinkedModelSerializer):
 class FoodSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = Food
-    fields = ('id', 'type', 'example_1', 'example_2')
+    fields = ('id', 'type', 'example_1', 'example_2', 'wines')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
