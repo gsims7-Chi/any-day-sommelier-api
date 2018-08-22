@@ -5,15 +5,16 @@ class Wine(models.Model):
   type = models.CharField(max_length=100)
 
   def __str__(self):
-    return self.type
+    return self.food.all()
 
 class Food(models.Model):
   type = models.CharField(max_length=100)
   example_1 = models.CharField(max_length=100)
   example_2 = models.CharField(max_length=100)
+  wines = models.ManyToManyField(Wine, through='Pairing')
 
   def __str__(self):
-    return self.type
+    return self.wine_set.all()
 
 class User(models.Model):
   username = models.CharField(max_length=100)
